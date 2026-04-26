@@ -1,4 +1,4 @@
-<h1 align="center">Practias SE P2</h1>
+<h1 align="center">Prácticas SE P2</h1>
 
 <p align="center">
   <strong>Portafolio académico con dos proyectos independientes</strong><br>
