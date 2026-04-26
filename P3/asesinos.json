@@ -1,0 +1,307 @@
+[
+    {
+        "nombre": "Elizabeth Bathory",
+        "rasgos": [
+            "castillo",
+            "mujer",
+            "siglo_16",
+            "europa",
+            "nobleza"
+        ],
+        "foto": "assets/Elizabeth.png",
+        "bio": "La Condesa Sangrienta. Se cree que tortur\u00f3 a cientos de j\u00f3venes en su castillo en Hungr\u00eda."
+    },
+    {
+        "nombre": "Harold Shipman",
+        "rasgos": [
+            "veneno",
+            "perfil_medico",
+            "europa",
+            "siglo_20",
+            "ancianos"
+        ],
+        "foto": "assets/Harold.png",
+        "bio": "El 'Doctor Muerte'. Un m\u00e9dico brit\u00e1nico que asesin\u00f3 a cientos de sus pacientes con morfina."
+    },
+    {
+        "nombre": "Richard Ramirez",
+        "rasgos": [
+            "pentagrama",
+            "negro",
+            "eeuu",
+            "siglo_20",
+            "satanismo",
+            "invasion_domestica"
+        ],
+        "foto": "assets/Richard.png",
+        "bio": "Acosador nocturno que dejaba s\u00edmbolos sat\u00e1nicos en las escenas. Atacaba irrumpiendo en hogares."
+    },
+    {
+        "nombre": "John Wayne Gacy",
+        "rasgos": [
+            "payaso",
+            "fiestas",
+            "sotano",
+            "eeuu",
+            "siglo_20",
+            "estrangulacion"
+        ],
+        "foto": "assets/John.png",
+        "bio": "Conocido como Pogo el Payaso. Enterr\u00f3 a m\u00e1s de 20 v\u00edctimas en el s\u00f3tano de su propia casa."
+    },
+    {
+        "nombre": "H.H. Holmes",
+        "rasgos": [
+            "hotel",
+            "castillo",
+            "eeuu",
+            "siglo_19",
+            "fraude",
+            "perfil_medico"
+        ],
+        "foto": "assets/Holmes.png",
+        "bio": "Construy\u00f3 un 'Castillo de los Asesinatos' con trampas y c\u00e1maras de gas durante la Feria Mundial de 1893."
+    },
+    {
+        "nombre": "Dennis Nilsen",
+        "rasgos": [
+            "apartamento",
+            "estrangulacion",
+            "europa",
+            "siglo_20",
+            "londres"
+        ],
+        "foto": "assets/Dennis.png",
+        "bio": "Asesinaba a hombres j\u00f3venes en Londres y guardaba los cuerpos debajo del piso de su casa."
+    },
+    {
+        "nombre": "The Golden State Killer",
+        "rasgos": [
+            "ex_policia",
+            "adn",
+            "pasamonta\u00f1as",
+            "eeuu",
+            "siglo_20",
+            "invasion_domestica"
+        ],
+        "foto": "assets/Golden.png",
+        "bio": "Identificado d\u00e9cadas despu\u00e9s gracias a la genealog\u00eda gen\u00e9tica. Fue un oficial de polic\u00eda."
+    },
+    {
+        "nombre": "Mary Ann Cotton",
+        "rasgos": [
+            "veneno",
+            "mujer",
+            "siglo_19",
+            "europa",
+            "familia"
+        ],
+        "foto": "assets/Mary.png",
+        "bio": "La 'Viuda Negra' brit\u00e1nica. Usaba ars\u00e9nico para eliminar a sus maridos e hijos por dinero de seguros."
+    },
+    {
+        "nombre": "Ted Bundy",
+        "rasgos": [
+            "carismatico",
+            "fuga",
+            "traje",
+            "eeuu",
+            "siglo_20",
+            "estrangulacion",
+            "victimas_femeninas"
+        ],
+        "foto": "assets/Ted.png",
+        "bio": "Usaba su carisma para atraer a sus v\u00edctimas. Escap\u00f3 dos veces de prisi\u00f3n antes de su ejecuci\u00f3n."
+    },
+    {
+        "nombre": "Arthur Shawcross",
+        "rasgos": [
+            "rio",
+            "canibalismo",
+            "eeuu",
+            "siglo_20",
+            "mutilacion"
+        ],
+        "foto": "assets/Arthur.png",
+        "bio": "Atacaba en zonas boscosas cerca de r\u00edos. Fue un veterano de guerra con un historial violento."
+    },
+    {
+        "nombre": "Albert Fish",
+        "rasgos": [
+            "anciano",
+            "agujas",
+            "canibalismo",
+            "eeuu",
+            "siglo_20",
+            "estrangulacion"
+        ],
+        "foto": "assets/Albert.png",
+        "bio": "El 'Vampiro de Brooklyn'. Un hombre mayor que enviaba cartas s\u00e1dicas a los padres de sus v\u00edctimas."
+    },
+    {
+        "nombre": "Edmund Kemper",
+        "rasgos": [
+            "gigante",
+            "madre",
+            "eeuu",
+            "siglo_20",
+            "mutilacion",
+            "carismatico"
+        ],
+        "foto": "assets/Edmund.png",
+        "bio": "Asesino de colegialas con un IQ extremadamente alto. Se entreg\u00f3 voluntariamente a las autoridades."
+    },
+    {
+        "nombre": "Robert Pickton",
+        "rasgos": [
+            "cerdos",
+            "granjero",
+            "canada",
+            "siglo_20",
+            "mutilacion"
+        ],
+        "foto": "assets/Robert.png",
+        "bio": "Criador de cerdos canadiense que eliminaba restos de sus v\u00edctimas alimentando a sus animales."
+    },
+    {
+        "nombre": "Jack el Destripador",
+        "rasgos": [
+            "cuchillo",
+            "niebla",
+            "londres",
+            "siglo_19",
+            "identidad_desconocida",
+            "europa"
+        ],
+        "foto": "assets/Jack.png",
+        "bio": "El asesino m\u00e1s famoso del siglo XIX. Nunca fue capturado y sus cr\u00edmenes en Whitechapel son leyenda."
+    },
+    {
+        "nombre": "Ted Kaczynski",
+        "rasgos": [
+            "explosivos",
+            "cabana",
+            "eeuu",
+            "siglo_20",
+            "cartas"
+        ],
+        "foto": "assets/Kaczynski.png",
+        "bio": "El Unabomber. Un genio matem\u00e1tico que enviaba paquetes bomba desde una caba\u00f1a aislada."
+    },
+    {
+        "nombre": "The BTK Killer",
+        "rasgos": [
+            "cuerda",
+            "iglesia",
+            "tecnico",
+            "eeuu",
+            "siglo_20",
+            "estrangulacion",
+            "cartas"
+        ],
+        "foto": "assets/BTK.png",
+        "bio": "Dennis Rader. Ataba, torturaba y mataba. Fue atrapado a\u00f1os despu\u00e9s por enviar un disquete a la polic\u00eda."
+    },
+    {
+        "nombre": "Aileen Wuornos",
+        "rasgos": [
+            "mujer",
+            "carretera",
+            "pistola",
+            "eeuu",
+            "siglo_20",
+            "arma_de_fuego"
+        ],
+        "foto": "assets/Aileen.png",
+        "bio": "Asesin\u00f3 a siete hombres en las carreteras de Florida. Es una de las asesinas seriales m\u00e1s famosas."
+    },
+    {
+        "nombre": "David Berkowitz",
+        "rasgos": [
+            "perro",
+            "arma_de_fuego",
+            "eeuu",
+            "siglo_20",
+            "cartas"
+        ],
+        "foto": "assets/David.png",
+        "bio": "El 'Hijo de Sam'. Afirmaba que el perro de su vecino le ordenaba cometer los asesinatos."
+    },
+    {
+        "nombre": "Charles Manson",
+        "rasgos": [
+            "lider",
+            "secta",
+            "marca_frente",
+            "eeuu",
+            "siglo_20",
+            "autor_intelectual"
+        ],
+        "foto": "assets/Charles.png",
+        "bio": "L\u00edder de 'La Familia'. No mat\u00f3 directamente, pero manipul\u00f3 a sus seguidores para cometer masacres."
+    },
+    {
+        "nombre": "Jeffrey Dahmer",
+        "rasgos": [
+            "gafas",
+            "rubio",
+            "apartamento",
+            "canibalismo",
+            "siglo_20",
+            "eeuu",
+            "estrangulacion"
+        ],
+        "foto": "assets/Jeffrey.png",
+        "bio": "Conocido como el Can\u00edbal de Milwaukee. Conservaba restos en su apartamento y cometi\u00f3 actos de canibalismo."
+    },
+    {
+        "nombre": "Gary Ridgway",
+        "rasgos": [
+            "rio",
+            "prostitutas",
+            "eeuu",
+            "siglo_20",
+            "estrangulacion"
+        ],
+        "foto": "assets/Gary.png",
+        "bio": "El Asesino de Green River. Confes\u00f3 haber matado a 49 mujeres, aunque se sospecha de muchas m\u00e1s."
+    },
+    {
+        "nombre": "The Zodiac Killer",
+        "rasgos": [
+            "mascara",
+            "cartas",
+            "criptogramas",
+            "eeuu",
+            "siglo_20",
+            "identidad_desconocida"
+        ],
+        "foto": "assets/Zodiac.png",
+        "bio": "Aterroriz\u00f3 California enviando cartas cifradas a la prensa. Su identidad real nunca fue descubierta."
+    },
+    {
+        "nombre": "Andrei Chikatilo",
+        "rasgos": [
+            "rusia",
+            "trenes",
+            "europa",
+            "siglo_20",
+            "mutilacion"
+        ],
+        "foto": "assets/Andrei.png",
+        "bio": "El Carnicero de Rostov. Oper\u00f3 en la Uni\u00f3n Sovi\u00e9tica atacando principalmente en estaciones de tren."
+    },
+    {
+        "nombre": "Ed Gein",
+        "rasgos": [
+            "piel",
+            "madre",
+            "eeuu",
+            "siglo_20",
+            "mutilacion",
+            "granjero"
+        ],
+        "foto": "assets/Ed.png",
+        "bio": "Inspiraci\u00f3n para 'Psycho'. Profanaba tumbas para crear objetos con piel y restos humanos."
+    }
+]

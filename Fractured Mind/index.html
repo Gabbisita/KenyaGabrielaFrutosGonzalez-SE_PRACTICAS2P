@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dae's Fractured Mind · Gabby Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- Pantalla de acceso inicial. Se muestra al cargar (window.onload en game.js). -->
+<div id="s-login" class="screen">
+    <div class="login-box">
+        <h1>SISTEMA NCMH</h1>
+        <p>IDENTIFICACIÓN DE AGENTE REQUERIDA</p>
+        <input type="text" id="user-input" placeholder="Escriba su nombre...">
+        <button class="btn" onclick="registerUser()">ACCEDER ↗</button>
+    </div>
+</div>
+
+<div id="user-stats" class="stats-bar"></div>
+
+  <!-- Fondo dinamico del caso (se modifica desde JS segun la escena). -->
+  <div id="scene-bg"></div>
+
+  <!-- Retrato lateral del personaje activo en acusacion/revelacion. -->
+  <div id="char-portrait-wrap">
+    <img id="char-portrait-img" src="" alt="">
+    <span id="char-portrait-label"></span>
+  </div>
+
+  <!-- Capas visuales de atmosfera (grano, viñeta, scanlines, barra roja). -->
+  <div id="grain"></div>
+  <div id="vignette"></div>
+  <div id="scanlines"></div>
+  <div id="blood-bar"></div>
+
+  <!-- Barra de progreso narrativa (actualizada por setProgress en ui.js). -->
+  <div id="prog-bar"><div id="prog-fill"></div></div>
+
+  <!-- Navegacion superior persistente: marca, paso actual y numero de caso. -->
+  <nav id="topnav">
+    <span class="nav-logo">Dae's <span>Fractured</span> Mind · Gabby Edition</span>
+    <span class="nav-step" id="nav-step">· Seoul National University Hospital ·</span>
+    <span class="nav-case" id="nav-case"></span>
+  </nav>
+
+
+  <!-- Pantalla de titulo/portada. Punto de entrada al juego. -->
+  <div id="s-title" class="screen active">
+    <span class="eyebrow">Un thriller psicológico · Práctica · 5 casos</span>
+
+    <div class="title-main glitch" data-text="DAE'S FRACTURED MIND">
+      DAE'S <span class="red">FRACTURED</span> MIND
+    </div>
+
+    <div class="title-divider"></div>
+
+    <div class="title-quote">
+      "No sé si lo que recuerdo pasó de verdad.<br>
+      No sé si estoy aquí o si esto también es una ilusión.<br>
+      Lo único que sé es que <em>alguien lo hizo</em>.<br>
+      Y necesito saber quién."
+      <div class="title-attribution">— Dae &nbsp;·&nbsp; Sala B &nbsp;·&nbsp; Seoul National University Hospital </div>
+    </div>
+
+    <div class="title-divider"></div>
+
+    <div class="case-badge">
+      <span class="pulse-dot"></span>Caso Nº <span id="case-num">---</span> · Seleccionado aleatoriamente
+    </div>
+
+    <div class="btn-row">
+      <button class="btn" onclick="startGame()">DESPERTAR</button>
+      <button class="btn-ghost" onclick="showLore()">¿Qué pasó?</button>
+      <button class="btn-ghost" onclick="showCast()">Información</button>
+    </div>
+  </div>
+
+  <!-- Pantalla de lore: contexto narrativo y reglas resumidas. -->
+  <div id="s-intro" class="screen">
+    <span class="eyebrow">· El expediente de Dae ·</span>
+    <div class="lore-title">La historia que nadie recuerda</div>
+    <hr class="sep-short">
+
+    <div class="lore-body">
+    El informe policial lo describe como un "incidente violento no resuelto", pero para la mente de <strong>Dae</strong>, es un abismo en blanco. Esta brillante estudiante de arte despertó en el ala psiquiátrica del <span class="accent">Seoul National University Hospital</span> con amnesia disociativa severa. Su cerebro, como mecanismo de defensa tras sobrevivir a un brutal intento de asesinato, borró por completo su identidad y los horrores de aquella noche.
+    <br><br>
+    Lo poco que los investigadores han logrado reconstruir revela una red de obsesión y traición a su alrededor. La chispa que inició el fuego fue <em>Dakho Belmont</em>, su prestigioso profesor. Un romance prohibido, seductor y absolutamente destructivo. El secreto se filtró hasta <em>Pax Vanderbilt</em>, su novio oficial, cuyo amor se pudrió hasta convertirse en una jaula de celos enfermizos.
+    <br><br>
+    En medio del caos estaba <em>Ethan Blackwood</em>, su amigo más cercano. Ethan lo sabía todo, pero su máscara de sarcasmo le servía para ocultar que él también la amaba en un agonizante silencio, paralizado por la lealtad. El triángulo colapsó definitivamente con la llegada de <em>Xion Kravitz</em>, el hijo de Dakho. Al ingresar al mismo instituto, Xion se enamoró ciegamente de Dae, ignorando el oscuro y retorcido nexo que ella ya compartía con su padre.
+    <br><br>
+    El choque de estos secretos culminó en sangre y sirenas de ambulancia. Ahora, atrapada en los pasillos de su propia mente fragmentada, Dae depende totalmente del Dr. <em>Darren Sterling</em>. Él controla sus terapias, sus medicamentos y la forma en que recuerda el mundo.
+    <br><br>
+    La gran pregunta que flota en el hospital es: <strong>¿El doctor busca la verdad, o la está construyendo a su conveniencia?</strong>
+</div>
+
+    <hr class="sep">
+
+    <div class="lore-body" style="font-size:.7rem;color:var(--inkfaint)">
+      El sistema sortea aleatoriamente un culpable, un arma y una locación al iniciar cada partida.
+      Recibirás tres pistas extraídas de los pensamientos fragmentados de Dae. Tienes una sola acusación.
+      Encuentra la combinación correcta antes de que la mente de Dae te consuma a ti también.
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-ghost" onclick="goTo('s-title')">← Volver</button>
+      <button class="btn" onclick="startGame()">COMENZAR CASO</button>
+    </div>
+  </div>
+
+
+  <!-- Pantalla de informacion: sospechosos, armas y locaciones (render dinamico). -->
+  <div id="s-cast" class="screen">
+    <span class="eyebrow">· Los sospechosos ·</span>
+    <div class="section-title">Cinco personas. Una verdad.</div>
+    <hr class="sep-short">
+    <div class="chars-grid" id="cast-grid"></div>
+
+    <hr class="sep" style="max-width:900px">
+
+    <span class="eyebrow">· Las armas ·</span>
+    <div class="section-title" style="font-size:1.4rem">Lo que usaron contra ella</div>
+    <hr class="sep-short">
+    <div class="items-grid" id="weapons-grid"></div>
+
+    <hr class="sep" style="max-width:900px">
+
+    <span class="eyebrow">· Las locaciones ·</span>
+    <div class="section-title" style="font-size:1.4rem">Donde ocurrió todo</div>
+    <hr class="sep-short">
+    <div class="items-grid" id="locations-grid"></div>
+
+    <div class="btn-row">
+      <button class="btn-ghost" onclick="goTo('s-title')">← Volver</button>
+      <button class="btn" onclick="startGame()">COMENZAR CASO</button>
+    </div>
+  </div>
+
+
+  <!-- Pantalla de pistas: muestra nota de Sterling y evidencias del caso. -->
+  <div id="s-clues" class="screen">
+    <span class="eyebrow">· Expediente clasificado ·</span>
+    <div class="section-title">Las pistas de Dae</div>
+    <p class="section-sub">Fragmentos encontrados en las paredes de su habitación. Garabatos. Susurros escritos.</p>
+    <hr class="sep-short">
+
+    <div class="sterling-note" id="sterling-note">
+      <span class="sterling-author">Cargando nota del Dr. Sterling...</span>
+    </div>
+
+    <div class="clue-files" id="clue-files"></div>
+
+    <div class="btn-row">
+      <button class="btn-ghost" onclick="goTo('s-title');clearSceneBg();hideCharacterPortrait()">← Inicio</button>
+      <button class="btn" onclick="goTo('s-accuse');setProgress(65);setNav('· Acusación ·')">HACER MI ACUSACIÓN →</button>
+    </div>
+  </div>
+
+
+  <!-- Pantalla de acusacion: seleccion de culpable, arma y lugar. -->
+  <div id="s-accuse" class="screen">
+    <span class="eyebrow">· Sala de interrogación · SNUH ·</span>
+    <div class="section-title">Tu acusación</div>
+    <hr class="sep-short">
+
+    <p class="accuse-intro">
+      "¿Quién crees que lo hizo, Dae?<br>¿O sigues sin poder recordar?"
+      <cite>— Dr. Darren Sterling</cite>
+    </p>
+
+    <div class="accuse-section">
+      <div class="accuse-label">El culpable</div>
+      <div class="mini-grid" id="accuse-chars"></div>
+    </div>
+
+    <div class="accuse-section">
+      <div class="accuse-label">El arma</div>
+      <div class="mini-grid" id="accuse-weapons"></div>
+    </div>
+
+    <div class="accuse-section">
+      <div class="accuse-label">La locación</div>
+      <div class="mini-grid" id="accuse-locs"></div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn-ghost" onclick="goTo('s-clues');setProgress(40);setNav('· Expediente ·');showCharacterPortrait(culprit,'clue')">← Revisar pistas</button>
+      <button class="btn-gold" id="btn-accuse" onclick="confirmAccusation()">ACUSAR ↗</button>
+    </div>
+  </div>
+
+
+  <!-- Pantalla de revelacion final: resultado, historia y comparativa de elecciones. -->
+  <div id="s-reveal" class="screen">
+    <span class="reveal-eyebrow">· Revelación del caso ·</span>
+    <div class="reveal-name" id="rev-name"></div>
+    <div class="verdict-box">
+      <div class="verdict-culprit" id="rev-culprit"></div>
+      <div class="verdict-detail"  id="rev-detail"></div>
+    </div>
+    <div class="story-body"    id="rev-story"></div>
+    <div class="result-banner" id="result-banner"></div>
+    <div style="width:100%">
+      <div class="accuse-label">Tu conclusión vs lo que en realidad pasó</div>
+      <div class="score-row" id="score-row"></div>
+    </div>
+    <div class="epilogue-box">
+      <div class="epilogue-text" id="epilogue-text"></div>
+      <span class="epilogue-sign" id="epilogue-sign"></span>
+    </div>
+    <div class="btn-row">
+      <button class="btn-ghost" onclick="resetGame()">Nuevo caso</button>
+      <button class="btn" onclick="goTo('s-title');setProgress(0);setNav('· Seoul National University Hospital ·');clearSceneBg();hideCharacterPortrait()">Volver al inicio</button>
+    </div>
+  </div>
+
+
+    <!-- Orden de carga importante:
+      1) data.js define contenido y estado global
+      2) ui.js define utilidades visuales
+      3) game.js conecta flujo del juego y eventos -->
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/game.js"></script>
+  
+
+</body>
+</html>
