@@ -40,8 +40,7 @@ No comparten runtime ni dependencias directas. Cada carpeta representa un entreg
 3. Proyecto 2: Proyecto Carmesí
 4. Requisitos y dependencias
 5. Puesta en marcha
-6. Criterios de calidad para entrega
-7. Créditos
+6. Créditos
 
 ---
 
